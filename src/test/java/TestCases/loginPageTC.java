@@ -29,10 +29,13 @@ public class loginPageTC {
 public Logger LOGGER= LogManager.getLogger();
     @BeforeMethod ( alwaysRun = true)
     public void setup() {
+        /*
         Logger logger;
         logger=Logger.getLogger(setup.class.getName());
         logger.setLevel(Level.INFO);// we will get a clear view of the test flow and important events that occur during the test execution.
         logger.info("Running test in " + browser);
+        */
+
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com");
@@ -60,7 +63,7 @@ public Logger LOGGER= LogManager.getLogger();
         Assert.assertTrue(expected, "User Name is required ");
     }
 
-/*
+
     @Test
     public void AddToCart() {
         P01_LoginPage loginPage= new P01_LoginPage(driver);
@@ -83,9 +86,9 @@ public Logger LOGGER= LogManager.getLogger();
         Checkout.ClickCancel();
 
     }
-*/
+
     @AfterMethod  ( alwaysRun = true)
     public void quit() {
-        //  driver.quit();
+         driver.quit();
     }
 }
