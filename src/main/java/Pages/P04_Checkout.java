@@ -62,5 +62,10 @@ public P02_HomePage ClickCancel()
         Utility.clickElement(driver,CancelOrder);
     return new P02_HomePage(driver);
 }
+    public P02_HomePage hello()
+    {
+        Utility.clickElement(driver,CancelOrder);
+        return new P02_HomePage(driver);
+    }
 
 }
