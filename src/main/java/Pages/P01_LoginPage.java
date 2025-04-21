@@ -39,7 +39,6 @@ public class P01_LoginPage {
     public P02_HomePage clickLogin()
     {
         Utility.clickElement(driver,loginButton);
-        //Utility.dealWithAlert();
        // driver.findElement(loginButton).click();
         return new P02_HomePage(driver);
     }

@@ -1,0 +1,1 @@
+{"uuid":"a2db9a54-2359-46be-8511-1acab536a22d","name":"TestCases.loginPageTC.setup","children":["6389de3f-f20b-4e91-a494-3a016d25e949"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1745269486241,"stop":1745269508248}],"afters":[],"start":1745269486240,"stop":1745269508249}

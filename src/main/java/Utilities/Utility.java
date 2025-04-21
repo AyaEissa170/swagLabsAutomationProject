@@ -25,11 +25,5 @@ public class Utility {
         driver.findElement(locator).sendKeys(Text);
 
     }
-    /*
-  public static  int generateRandomNumber()
-  {
-      return new Random().
-  }
 
-     */
 }

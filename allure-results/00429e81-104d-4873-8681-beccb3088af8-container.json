@@ -1,0 +1,1 @@
+{"uuid":"00429e81-104d-4873-8681-beccb3088af8","name":"TestCases.addToCartTC.quit","children":["8948736a-3f80-4578-9ca8-8a2d72bdc843"],"description":"","befores":[],"afters":[{"name":"quit","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1745173543907,"stop":1745173543907}],"start":1745173543906,"stop":1745173543907}

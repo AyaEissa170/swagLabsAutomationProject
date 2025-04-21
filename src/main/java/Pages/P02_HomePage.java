@@ -12,7 +12,6 @@ public class P02_HomePage {
 
 
     private final WebDriver driver;
-   // private final By alert= By
     public P02_HomePage(WebDriver driver) {
         this.driver = driver;
 
@@ -26,7 +25,7 @@ public class P02_HomePage {
         switch(button) {
             case "SauceLabsBackpack":
                 Utility.clickElement(driver, SauceLabsBackpack);
-               // return new P02_HomePage(driver);
+
             break;
 
             case "SauceLabsBikeLight":
