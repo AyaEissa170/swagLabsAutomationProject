@@ -36,11 +36,11 @@ public class P01_LoginPage {
 
     }
 
-    public P02_HomePage clickLogin()
+    public P02_LandingPage clickLogin()
     {
         Utility.clickElement(driver,loginButton);
        // driver.findElement(loginButton).click();
-        return new P02_HomePage(driver);
+        return new P02_LandingPage(driver);
     }
 }
 

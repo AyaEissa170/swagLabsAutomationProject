@@ -13,7 +13,8 @@ public class P04_Checkout {
         this.driver=driver;
     }
 //elements
-    private final By checkoutButton= By.id("checkout");
+private final By checkoutButton= By.id("checkout");
+
     private final By ConfirmOrderFirstName=By.id("first-name");
     private final By ConfirmOrderLastName=By.id("last-name");
     private final By ConfirmOrderPostalCode=By.id("postal-code");
@@ -53,19 +54,21 @@ public class P04_Checkout {
 
 
     }
-public void ClickContinue()
+public P04_Checkout ClickContinue()
 {
 Utility.clickElement(driver,continueButton);
+return this;
 }
-public P02_HomePage ClickCancel()
+public P02_LandingPage ClickCancel()
 {
         Utility.clickElement(driver,CancelOrder);
-    return new P02_HomePage(driver);
+    return new P02_LandingPage(driver);
 }
-    public P02_HomePage hello()
-    {
-        Utility.clickElement(driver,CancelOrder);
-        return new P02_HomePage(driver);
-    }
+public void clickFinishOrderButton()
+{
+    Utility.clickElement(driver,FinishOrder);
+
+}
+
 
 }
