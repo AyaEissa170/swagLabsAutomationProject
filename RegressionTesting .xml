@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="MasterSuit">
+    <listeners>
+        <listener class-name="Listeners.ISuite"/>
+    </listeners>
+<suite-files>
+    <suite-file path="loginPageTC.xml"/>
+    <suite-file path="landingPageTC.xml"/>
+    <suite-file path="CartPageTC.xml"/>
+    <suite-file path="CheckoutTC.xml"/>
+</suite-files>
+
+</suite>

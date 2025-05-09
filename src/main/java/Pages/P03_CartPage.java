@@ -15,6 +15,8 @@ public class P03_CartPage extends P02_LandingPage {
     static float totalPriceCartPage=0;
 
     //Constructor
+    ThreadLocal<WebDriver> driverThreadLocal=new ThreadLocal<>();
+
     private final WebDriver driver;
 
     public P03_CartPage(WebDriver driver)

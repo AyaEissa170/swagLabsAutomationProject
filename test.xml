@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="cartPageSanityTesting" parallel="methods" thread-count="4">
+    <listeners>
+        <listener class-name="Listeners.InvocedMethod"/>
+    </listeners>
+    <test name ="login">
+        <classes>
+            <class name="TestCases.login"/>
+        </classes>
+    </test>
+
+</suite>

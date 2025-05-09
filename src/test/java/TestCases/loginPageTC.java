@@ -1,14 +1,20 @@
 package TestCases;
 
 import io.qameta.allure.testng.AllureTestNg;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import org.testng.annotations.Listeners;
+import Listeners.InvocedMethod;
+import java.time.Duration;
 
 @Listeners({AllureTestNg.class})
 public class loginPageTC extends P00_BaseTests {
+
 
     @Test (priority = 1, groups={"loginPageRegressionTC"})
     public void HardValidationTc() {
@@ -36,15 +42,19 @@ public class loginPageTC extends P00_BaseTests {
     }
     @Test (priority = 4, groups={"loginPageRegressionTC"})//bug there is no alert message under password filed
     public void HardInvalidLoginTestCase_EmptyFields() {
-        loginPage.enterUserName("").enterUserName("").clickLogin();
-       // boolean expected = driver.getCurrentUrl().equals(loginBaseURL);
-        //Assert.assertTrue(expected,"Username is required,Password Name is required");
+      loginPage.clickLogin();
+
+        String text= driver.findElement(By.cssSelector("form > div > h3[data-test=\"error\"]")).getText();
+        System.out.println("text is"+text);
+
+        boolean expected=text.equals("Username is required,Password is required");
+        System.out.println(expected);
+
+        Assert.assertTrue(expected);
+
 
     }
 
-    @AfterMethod  ( alwaysRun = true)
-    public void quit() {
-         driver.quit();
-    }
+
 
 }

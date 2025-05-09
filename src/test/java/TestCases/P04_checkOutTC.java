@@ -72,18 +72,7 @@ public class P04_checkOutTC extends P00_BaseTests {
 
 
     }
-    //select product1 then remove the same item  from cart "cart item =zero"
-    //bug confirm the order although cart item equal zero
-    @Test
-    public void invalidShoppingJourney_01() {
 
-        loginPage.enterUserName(loginUsername).enterPassword(loginPassword).clickLogin();
-        selectProduct.addToCart(Products_Item1).removeFromCart(Products_Item1_Remove).removeFromCart(Products_Item1_Remove);
-        Cart.clickCartICon();
-        Checkout.checkOut().enterFirstName(checkOut_FirstName).enterLastName(checkOut_LastName).
-                enterPostalCode(checkOut_PostalCode).ClickContinue().clickFinishOrderButton();
-
-    }
 
 
 
