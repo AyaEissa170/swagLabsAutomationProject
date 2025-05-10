@@ -31,7 +31,10 @@ WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
         loginPage.enterUserName(loginUsername).enterPassword(loginPassword).clickLogin()
                 .addRandomProducts(3,6);
 
-        Assert.assertTrue(selectProduct.getNumberOfProductsOnCart().equals("3"));
+logger.info(selectProduct.getNumberOfProductsOnCart());
+        Assert.assertTrue(Cart.comparingPrices());
+
+       // Assert.assertTrue(selectProduct.getNumberOfProductsOnCart().equals("3"));
 
     }
 

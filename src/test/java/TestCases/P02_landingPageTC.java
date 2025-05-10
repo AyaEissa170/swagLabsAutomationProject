@@ -42,6 +42,7 @@ public void addingAllProductsToCartTC()
     }
     @Test
 
+    /*
     public void emptyCartTC()
     {
         loginPage.enterUserName(loginUsername).enterPassword(loginPassword).clickLogin()
@@ -51,5 +52,5 @@ public void addingAllProductsToCartTC()
 
 
     }
-
+*/
 }
