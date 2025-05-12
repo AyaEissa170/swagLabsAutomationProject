@@ -1,5 +1,6 @@
 package TestCases;
 
+import Utilities.Constants;
 import Utilities.LogsUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +18,7 @@ WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
     @Test
     public void comparingPricesTC_001 ()
     {
-        loginPage.enterUserName(loginUsername).enterPassword(loginPassword).clickLogin()
+        loginPage.enterUserName(Constants.loginUsername).enterPassword(Constants.loginPassword).clickLogin()
                 .addAllProductsToCart().getTotalPriceOfSelectedProducts();
         selectProduct.clickCartICon();
 
@@ -28,7 +29,7 @@ WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5));
     @Test
     public void comparingPricesTC_002 ()
     {
-        loginPage.enterUserName(loginUsername).enterPassword(loginPassword).clickLogin()
+        loginPage.enterUserName(Constants.loginUsername).enterPassword(Constants.loginPassword).clickLogin()
                 .addRandomProducts(3,6);
 
 logger.info(selectProduct.getNumberOfProductsOnCart());
@@ -37,5 +38,6 @@ logger.info(selectProduct.getNumberOfProductsOnCart());
        // Assert.assertTrue(selectProduct.getNumberOfProductsOnCart().equals("3"));
 
     }
+
 
 }

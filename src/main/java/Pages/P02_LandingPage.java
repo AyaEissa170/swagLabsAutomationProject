@@ -1,6 +1,8 @@
 package Pages;
 
 import Utilities.Utility;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +11,8 @@ import java.util.List;
 import java.util.Set;
 
 public class P02_LandingPage {
-private List<WebElement> allProducts;
+    private static final Logger log = LogManager.getLogger(P02_LandingPage.class);
+    private List<WebElement> allProducts;
 private List<WebElement> selectedProducts;
 public float totalPriceLandingPage=0;
 //locators_add_buttons
@@ -34,6 +37,11 @@ private final By SauceLabsBackpack =By.id("add-to-cart-sauce-labs-backpack");
     private  final  By NumberOfSelectedProducts=By.xpath("//button[.='Remove']");
     private final By cartProducts= By.xpath("//*[@id=\"shopping_cart_container\"]/a");
     private final By priceOfSelectedProductsLocator=By.xpath("//button[.=\"Remove\"]//preceding-sibling::div[@class='inventory_item_price']");
+    private final By menu =By.id("react-burger-menu-btn");
+    private final By logOut =By.id("logout_sidebar_link");
+    private final By resetAppItem=By.id("reset_sidebar_link");
+
+
 
 
 
@@ -134,7 +142,8 @@ public String getNumberOfProductsOnCart() {
   try {
         return Utility.getText(driver, cartNumbersOfProductsOnCart);
     } catch (Exception e) {
-      throw new RuntimeException(e);
+      log.error(e.getMessage());
+      return "0";
   }
 }
     public String getNumberOfSelectedProducts() {
@@ -143,7 +152,8 @@ public String getNumberOfProductsOnCart() {
             return String.valueOf(selectedProducts.size());
         } catch (Exception e) {
 
-            throw new RuntimeException(e);
+            log.error(e.getMessage());
+            return "0";
         }
     }
 public boolean comparingNumberOfSelectedProductsWithCart()
@@ -166,6 +176,7 @@ public P02_LandingPage addRandomProducts(int numberOfProductsNeeded, int totalNu
         Utility.clickElement(driver,cartProducts);
         return new P03_CartPage(driver);
     }
+
 public String getTotalPriceOfSelectedProducts() {
     try {
         List<WebElement> PriceOfSelectedProducts = driver.findElements(priceOfSelectedProductsLocator);
@@ -180,6 +191,26 @@ public String getTotalPriceOfSelectedProducts() {
     }
 
 }
+public P02_LandingPage clickMenu()
+{
+
+    Utility.clickElement(driver,menu);
+
+    return this;
+}
+
+public P02_LandingPage clickLogOUt()
+{
+
+        Utility.clickElement(driver,logOut);
+
+        return this;
+}
+public P02_LandingPage clickRestAppItem()
+    {
+        Utility.clickElement(driver,resetAppItem);
+        return this;
+    }
 
 }
 
